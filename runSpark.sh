@@ -1,0 +1,2 @@
+#!/bin/bash
+spark-submit --master k8s://https://192.168.9.80:6443 --deploy-mode cluster --conf spark.kubernetes.authenticate.submission.oauthTokenFile=/var/run/secrets/kubernetes.io/serviceaccount/token  --name spark-pi --class org.apache.spark.examples.SparkPi --conf spark.executor.instances=3 --conf spark.kubernetes.container.image=cgjames2008/testspark --conf spark.kubernetes.authenticate.driver.serviceAccountName=spark local:///opt/spark/examples/jars/spark-examples_2.11-2.4.3.jar

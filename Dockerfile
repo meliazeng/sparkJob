@@ -14,4 +14,7 @@ RUN curl -sL "http://www-us.apache.org/dist/spark/spark-$SPARK_VERSION/spark-$SP
 
 ENV PATH $PATH:$SBT_HOME/bin:$SPARK_HOME/bin
 
+COPY /runSpark.sh /usr/local/
+RUN chmod 777 /usr/local/runSpark.sh
+
 
